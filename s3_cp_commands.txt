@@ -1,0 +1,8 @@
+# ==== AWS ====
+# AWS command to copy local file to S3 bucket
+aws s3 cp validate-changes-update-db.yaml s3://amalik-s3-extension-demo 
+aws s3 cp static/checks/liquibase.checks-settings.conf s3://amalik-s3-extension-demo/static/checks/
+
+# AWS command to copy files from S3 bucket to local
+aws s3 cp s3://amalik-s3-extension-demo/validate-changes-update-db.yaml .
+aws s3 cp s3://amalik-s3-extension-demo/static/checks/liquibase.checks-settings.conf static/checks/ 

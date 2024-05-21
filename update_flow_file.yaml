@@ -1,0 +1,42 @@
+# update_flow_file.yaml
+# Author: Adeel Malik
+
+stages:
+  validateChangelog:
+    # Run validate on Repo Changelog
+    # https://docs.liquibase.com/commands/update/validate.html
+    actions:
+      - type: liquibase
+        command: validate
+
+      # Show database status
+      # https://docs.liquibase.com/commands/change-tracking/status.html
+      - type: liquibase
+        command: status
+
+      # Run checks
+      # https://docs.liquibase.com/commands/quality-checks/home.html
+      - type: liquibase
+        command: run checks
+
+  liquibaseUpdate:
+    # Run Update on Latest Repo State
+    # https://docs.liquibase.com/commands/update/update-sql.html
+    actions:
+    #   - type: liquibase
+    #     command: update-sql
+    #     cmdArgs: { }
+
+    # # Run Update on Latest Repo State
+    # # https://docs.liquibase.com/commands/update/update.html
+      - type: liquibase
+        command: update
+        cmdArgs: { }
+
+endStage:
+  actions:
+    # Show history
+    # https://docs.liquibase.com/commands/change-tracking/history.html
+    - type: liquibase
+      command: history
+      cmdArgs: {}
