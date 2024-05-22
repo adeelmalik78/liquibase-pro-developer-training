@@ -17,7 +17,7 @@ stages:
       # Run checks
       # https://docs.liquibase.com/commands/quality-checks/home.html
       - type: liquibase
-        command: run checks
+        command: checks run
 
   liquibaseUpdate:
     # Run Update on Latest Repo State
